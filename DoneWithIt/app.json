@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "name": "DoneWithItAgain",
+    "slug": "DoneWithItAgain",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
       "image": "./app/assets/splash.png",
@@ -13,15 +13,12 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    },
-    "description": ""
+    }
   }
 }
