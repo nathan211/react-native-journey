@@ -1,15 +1,16 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import Icon from "../components/Icon";
 import Text from "./Text";
 
 function CategoryPickerItem({ item, onPress }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Icon backgroundColor={item.backgroundColor} name={item.icon} size={80} />
       <Text style={styles.label}>{item.label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -18,7 +19,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 10,
     alignItems: "center",
-    width: "33%",
   },
   label: {
     marginTop: 5,
