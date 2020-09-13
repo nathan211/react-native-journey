@@ -2,16 +2,16 @@ import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import colors from "../../config/colors";
+import colors from "../config/colors";
 
-function ListItemDeleteAction({ onPress }) {
+function NewListingButton({ onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
         <MaterialCommunityIcons
-          name="trash-can-outline"
-          color="white"
-          size={35}
+          name="plus-circle"
+          color={colors.white}
+          size={40}
         />
       </View>
     </TouchableOpacity>
@@ -20,12 +20,16 @@ function ListItemDeleteAction({ onPress }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.danger,
-    width: 90,
-    height: 100,
-    justifyContent: "center",
     alignItems: "center",
+    backgroundColor: colors.primary,
+    borderColor: colors.white,
+    borderWidth: 10,
+    borderRadius: 35,
+    bottom: 25,
+    width: 70,
+    height: 70,
+    justifyContent: "center",
   },
 });
 
-export default ListItemDeleteAction;
+export default NewListingButton;

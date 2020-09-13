@@ -5,7 +5,7 @@ import Screen from "../components/Screen";
 import ListItem from "../components/lists/ListItem";
 import Icon from "../components/Icon";
 import colors from "../config/colors";
-import ListItemSeparator from "../components/ListItemSeparator";
+import ListItemSeparator from "../components/lists/ListItemSeparator";
 
 const menuItems = [
   {
@@ -14,6 +14,7 @@ const menuItems = [
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
+    targetScreen: "Listings",
   },
   {
     title: "My Messages",
@@ -21,10 +22,11 @@ const menuItems = [
       name: "email",
       backgroundColor: colors.secondary,
     },
+    targetScreen: "Messages",
   },
 ];
 
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -48,6 +50,7 @@ function AccountScreen(props) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
