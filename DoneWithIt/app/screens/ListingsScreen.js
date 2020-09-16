@@ -15,7 +15,7 @@ function ListingsScreen({ navigation }) {
   const getListingsApi = useApi(listingApi.getListings);
 
   useEffect(() => {
-    getListingsApi(1, 2, 3);
+    getListingsApi.request();
   }, []);
 
   return (
@@ -25,20 +25,23 @@ function ListingsScreen({ navigation }) {
           <AppText style={{ alignSelf: "center" }}>
             Couldn't retrive the listings.
           </AppText>
-          <Button title="Retry" onPress={getListingsApi.loadListings} />
+          <Button title="Retry" onPress={getListingsApi.request} />
         </>
       )}
-      <ActivityIndicator visible={loading} />
+      <ActivityIndicator visible={getListingsApi.loading} />
       <FlatList
         data={getListingsApi.data}
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
-          <Card
-            title={item.title}
-            subTitle={"$" + item.price}
-            imageUrl={item.images[0].url}
-            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-          />
+          <>
+            {console.log(item.images[0].url)}
+            <Card
+              title={item.title}
+              subTitle={"$" + item.price}
+              imageUrl={item.images[0].url}
+              onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+            />
+          </>
         )}
       />
     </Screen>
