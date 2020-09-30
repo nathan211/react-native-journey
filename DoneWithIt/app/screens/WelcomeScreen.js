@@ -12,9 +12,10 @@ function WelcomeScreen({ navigation }) {
       blurRadius={1}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo.png")} />
-        <Text>Keep working hard!</Text>
+        <Image style={styles.logo} source={require("../assets/logo-red.png")} />
+        <Text>Sell what you don't need.</Text>
       </View>
+
       <View style={styles.buttonsContainer}>
         <Button
           title="login"
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
+    marginBottom: 5,
   },
   logoContainer: {
     position: "absolute",
